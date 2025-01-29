@@ -109,9 +109,9 @@ body {
 @media (max-width: 768px) { 
   .grid-container {
     grid-template-columns: repeat(4, minmax(0, 1fr)); /* Show 4 images per row */
-    gap: 6px; /* Even smaller space between images on mobile */
-    row-gap: 8px;
-    padding: 8px; /* Reduce padding on smaller screens */
+    gap: 5px; /* Even smaller space between images on mobile */
+    row-gap: 5px;
+    padding: 7px; /* Reduce padding on smaller screens */
     margin-top: 0; /* Remove any margin on top */
     margin-bottom: 0; /* Ensure no margin between the grid and the next element */
   }
