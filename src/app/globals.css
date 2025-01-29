@@ -24,12 +24,19 @@ body {
 .header {
   width: 100%;
   color: rgb(255, 255, 255);
-  padding: 15px; /* Adjust padding as needed */
+  padding: 20px; /* Adjust padding as needed */
   text-align: left;
   font-family: 'Times New Roman', serif;
   background-color: #404040; /* Ensure background color is consistent */
   box-sizing: border-box; /* Avoid extra width/padding from being added to the total width */
   margin-bottom: 0; /* Ensure no margin below the header */
+}
+  /* Move header text closer to the left on mobile */
+@media (max-width: 768px) {
+  .header {
+    padding-left: 9px; /* Reduce left padding */
+  }
+
 }
 
 .header h1 {
@@ -47,12 +54,7 @@ body {
   margin-top: 0; /* Remove any margin on top */
   margin-bottom: 0; /* Ensure no margin between the grid and the next element */
 }
-/* Responsive layout: 4 images per row on mobile */
-@media (max-width: 768px) { 
-  .grid-container {
-    grid-template-columns: repeat(4, 1fr); /* 4 images per row for smaller screens */
-  }
-}
+
 /* Styling for each individual grid item */
 .grid-item {
   position: relative;
@@ -69,4 +71,13 @@ body {
   width: 100%; /* Make the image cover the container */
   height: 100%; /* Make the image cover the container */
   object-fit: cover; /* Ensure the image covers the square container without distortion */
+}
+
+/* ✅ Media Query for Mobile (iPhone 13 width: 390px) */
+@media (max-width: 768px) { 
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr); /* Show 4 images per row */
+    gap: 9px; /* Even smaller space between images on mobile */
+    padding: 9px; /* Reduce padding on smaller screens */
+  }
 }
