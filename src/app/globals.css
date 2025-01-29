@@ -24,19 +24,23 @@ body {
 .header {
   width: 100%;
   color: rgb(255, 255, 255);
-  padding: 20px; /* Adjust padding as needed */
+  padding-left: 20px; /* Adjust padding as needed */
+  padding-top: 10px;
+  padding-bottom: 15px;
   text-align: left;
   font-family: 'Times New Roman', serif;
   background-color: #404040; /* Ensure background color is consistent */
   box-sizing: border-box; /* Avoid extra width/padding from being added to the total width */
   margin-bottom: 0; /* Ensure no margin below the header */
 }
-  /* Move header text closer to the left on mobile */
+
+/* Move header text closer to the left on mobile */
 @media (max-width: 768px) {
   .header {
     padding-left: 9px; /* Reduce left padding */
+    padding-top: 7px;
+    padding-bottom: 12px;
   }
-
 }
 
 .header h1 {
@@ -49,7 +53,8 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(6, 1fr); /* 6 columns */
-  gap: 20px; /* Space between images */
+  gap: 13px; /* Space between images */
+  row-gap: 25px;
   padding: 0 20px; /* Remove padding from top and bottom, only apply left and right padding */
   margin-top: 0; /* Remove any margin on top */
   margin-bottom: 0; /* Ensure no margin between the grid and the next element */
@@ -59,11 +64,12 @@ body {
 .grid-item {
   position: relative;
   overflow: hidden;
-  border: 1px solid #ccc; /* Border around each image */
+  border: 1px solid #ededed; /* Border around each image */
   width: 100%; /* Full width of the column */
   padding-bottom: 100%; /* Aspect ratio of 1:1 for square container */
 }
 
+/* Image styling */
 .grid-item img {
   position: absolute; /* Position the image inside the container */
   top: 0;
@@ -73,11 +79,45 @@ body {
   object-fit: cover; /* Ensure the image covers the square container without distortion */
 }
 
+/* Styling the grid container for text boxes */
+.text-grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 equal-width columns */
+  gap: 15px; /* Space between text boxes */
+  row-gap: 238.5px;
+  padding: 0 20px; /* Padding around the grid */
+  margin-top: 0; /* Remove any margin on top */
+  margin-bottom: 0; /* Ensure no margin between the grid and the next element */
+  margin-top: -512px; /* Moves the entire grid up */
+}
+
+/* Styling for each individual text box */
+.text-box {
+  color: #ededed; /* Text color */
+  padding: 0px;
+  text-align: left; /* Center the text inside the box */
+  font-size: 10px; /* Text size */
+  font-family: 'Times New Roman', serif; /* Font style */
+}
 /* ✅ Media Query for Mobile (iPhone 13 width: 390px) */
 @media (max-width: 768px) { 
   .grid-container {
     grid-template-columns: repeat(4, 1fr); /* Show 4 images per row */
     gap: 9px; /* Even smaller space between images on mobile */
+    row-gap: 21px;
     padding: 9px; /* Reduce padding on smaller screens */
   }
+  .text-grid-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on mobile */
+    gap: 10px; /* Reduce space between text boxes */
+    row-gap: 54px;
+    padding: 9px;
+    margin-top: -555.5px; /* Moves the entire grid up */
+  }
+
+  .text-box {
+    font-size: 7px; /* Smaller text size for mobile */
+    height: 80px; /* Adjust height for smaller screens */
+  }
+
 }
