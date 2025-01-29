@@ -24,11 +24,11 @@ body {
 .header {
   width: 100%;
   color: rgb(255, 255, 255);
-  padding-left: 20px; /* Adjust padding as needed */
+  padding-left: 13px; /* Adjust padding as needed */
   padding-top: 10px;
   padding-bottom: 15px;
   text-align: left;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Times New Roman', serif;
   background-color: #404040; /* Ensure background color is consistent */
   box-sizing: border-box; /* Avoid extra width/padding from being added to the total width */
   margin-bottom: 0; /* Ensure no margin below the header */
@@ -39,15 +39,15 @@ body {
 /* Move header text closer to the left on mobile */
 @media (max-width: 768px) {
   .header {
-    padding-left: 9px; /* Reduce left padding */
+    padding-left: 8px; /* Reduce left padding */
     padding-top: 6px;
-    padding-bottom: 8px;
+    padding-bottom: 6px;
   }
 }
 
 .header h1 {
   margin: 0;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: normal;
 }
 
@@ -56,8 +56,8 @@ body {
   display: grid;
   grid-template-columns: repeat(6, 1fr); /* 6 columns */
   gap: 13px; /* Space between images */
-  row-gap: 25px;
-  padding: 0 20px; /* Remove padding from top and bottom, only apply left and right padding */
+  row-gap: 10px;
+  padding: 0 13px; /* Remove padding from top and bottom, only apply left and right padding */
   margin-top: 0; /* Remove any margin on top */
   margin-bottom: 0; /* Ensure no margin between the grid and the next element */
 }
@@ -65,11 +65,15 @@ body {
 /* Styling for each individual grid item */
 .grid-item {
   position: relative;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  border: 1px solid #ededed; /* Border around each image */
+  border: 1px solid rgb(209, 209, 209); /* Border around each image */
   width: 100%; /* Full width of the column */
-  padding-bottom: 100%; /* Aspect ratio of 1:1 for square container */
+  height: 0; /* Prevents auto height growth */
+  padding-bottom: calc(100% - 2px); /* Keeps the aspect ratio locked without causing flexbox shrink issues */
 }
+
 
 /* Image styling */
 .grid-item img {
@@ -81,53 +85,35 @@ body {
   object-fit: cover; /* Ensure the image covers the square container without distortion */
 }
 
-/* Styling the grid container for text boxes */
-.text-grid-container {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 equal-width columns */
-  gap: 15px; /* Space between text boxes */
-  row-gap: 238.5px;
-  padding: 0 20px; /* Padding around the grid */
-  margin-top: 0; /* Remove any margin on top */
-  margin-bottom: 0; /* Ensure no margin between the grid and the next element */
-  margin-top: -512px; /* Moves the entire grid up */
+  /* Text Styling */
+.image-text {
+  font-family: 'arial';
+  font-size: 9px;
+  color: rgb(209, 209, 209);
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Show "..." if text is too long */
+  margin-top: 0;
+  margin-top: -2px;
 }
+  @media (max-width: 768px) { 
+    .image-text {
+      font-size: 6px;
+      margin-top: 0; /* Remove any margin on top */
+      margin-bottom: 0;
 
-/* Styling for each individual text box */
-.text-box {
-  color: #ededed; /* Text color */
-  padding: 0px;
-  text-align: left; /* Center the text inside the box */
-  font-size: 10px; /* Text size */
-  font-family: 'Times New Roman', serif; /* Font style */
-  display: inline-block;  /* Ensure the text box is treated like a block but in-line with other boxes */
-  width: 100%; /* Set width as needed, you can use percentage or fixed value */
-  white-space: nowrap; /* Prevent the text from wrapping to the next line */
-  overflow: hidden; /* Hide anything that exceeds the box */
-  text-overflow: ellipsis; /* Add "..." when the text overflows */
-
+    }
 }
 /* ✅ Media Query for Mobile (iPhone 13 width: 390px) */
 @media (max-width: 768px) { 
   .grid-container {
-    grid-template-columns: repeat(4, 1fr); /* Show 4 images per row */
-    gap: 9px; /* Even smaller space between images on mobile */
-    row-gap: 21px;
-    padding: 9px; /* Reduce padding on smaller screens */
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* Show 4 images per row */
+    gap: 6px; /* Even smaller space between images on mobile */
+    row-gap: 8px;
+    padding: 8px; /* Reduce padding on smaller screens */
     margin-top: 0; /* Remove any margin on top */
     margin-bottom: 0; /* Ensure no margin between the grid and the next element */
-  }
-  .text-grid-container {
-    grid-template-columns: repeat(4, 1fr); /* 4 columns on mobile */
-    gap: 10px; /* Reduce space between text boxes */
-    row-gap: 99.5px;
-    padding: 9px;
-    margin-top: -457px; /* Moves the entire grid up */
-  }
-
-  .text-box {
-    font-size: 7px; /* Smaller text size for mobile */
-    height: 10px; /* Adjust height for smaller screens */
   }
 
 }
