@@ -28,24 +28,26 @@ body {
   padding-top: 10px;
   padding-bottom: 15px;
   text-align: left;
-  font-family: 'Times New Roman', serif;
+  font-family: 'Arial', sans-serif;
   background-color: #404040; /* Ensure background color is consistent */
   box-sizing: border-box; /* Avoid extra width/padding from being added to the total width */
   margin-bottom: 0; /* Ensure no margin below the header */
 }
-
+.underline-text {
+  text-decoration: underline;
+}
 /* Move header text closer to the left on mobile */
 @media (max-width: 768px) {
   .header {
     padding-left: 9px; /* Reduce left padding */
-    padding-top: 7px;
-    padding-bottom: 12px;
+    padding-top: 6px;
+    padding-bottom: 8px;
   }
 }
 
 .header h1 {
   margin: 0;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: normal;
 }
 
@@ -98,6 +100,12 @@ body {
   text-align: left; /* Center the text inside the box */
   font-size: 10px; /* Text size */
   font-family: 'Times New Roman', serif; /* Font style */
+  display: inline-block;  /* Ensure the text box is treated like a block but in-line with other boxes */
+  width: 100%; /* Set width as needed, you can use percentage or fixed value */
+  white-space: nowrap; /* Prevent the text from wrapping to the next line */
+  overflow: hidden; /* Hide anything that exceeds the box */
+  text-overflow: ellipsis; /* Add "..." when the text overflows */
+
 }
 /* ✅ Media Query for Mobile (iPhone 13 width: 390px) */
 @media (max-width: 768px) { 
@@ -106,18 +114,20 @@ body {
     gap: 9px; /* Even smaller space between images on mobile */
     row-gap: 21px;
     padding: 9px; /* Reduce padding on smaller screens */
+    margin-top: 0; /* Remove any margin on top */
+    margin-bottom: 0; /* Ensure no margin between the grid and the next element */
   }
   .text-grid-container {
     grid-template-columns: repeat(4, 1fr); /* 4 columns on mobile */
     gap: 10px; /* Reduce space between text boxes */
-    row-gap: 54px;
+    row-gap: 99.5px;
     padding: 9px;
-    margin-top: -555.5px; /* Moves the entire grid up */
+    margin-top: -457px; /* Moves the entire grid up */
   }
 
   .text-box {
     font-size: 7px; /* Smaller text size for mobile */
-    height: 80px; /* Adjust height for smaller screens */
+    height: 10px; /* Adjust height for smaller screens */
   }
 
 }
