@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation'; // For detecting the current page
 
 const Header = () => {
   const pathname = usePathname();  // Get the current pathname
@@ -11,22 +11,20 @@ const Header = () => {
   const isHomePage = pathname === '/';    // Check if we are on the homepage
 
   return (
-    <header className="header">
+    <header>
       <h1>
-        <span>tydiawen.com</span>
-        <span style={{ marginLeft: '8px', marginRight: '8px' }}>{' /'}</span>
-        {/* Space between 'tydiawen.com' and 'research' */}
-        <span>
-          <Link href="/" className={`research-link ${isHomePage ? 'underline' : ''}`}>
-            research
-          </Link>
-        </span>
-        <span style={{ marginLeft: '8px', marginRight: '8px' }}>{' /'}</span>
-        <span>
-          <Link href="/work" className={`work-link ${isWorkPage ? 'underline' : ''}`}>
-            work
-          </Link>
-        </span>
+        {/* Research link, underlined if on homepage */}
+        <Link href="https://research.tydiawen.com" className={`research-link ${isHomePage ? 'underline' : ''}`}>
+          Research
+        </Link>
+        
+        {/* Separator ">" between the links */}
+        <span> &gt; </span>
+
+        {/* Work link, underlined if on work page */}
+        <Link href="https://work.tydiawen.com" className={`work-link ${isWorkPage ? 'underline' : ''}`}>
+          Work
+        </Link>
       </h1>
     </header>
   );
