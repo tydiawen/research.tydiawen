@@ -32,9 +32,7 @@ body {
   background-color: #404040; /* Ensure background color is consistent */
   box-sizing: border-box; /* Avoid extra width/padding from being added to the total width */
   margin-bottom: 0; /* Ensure no margin below the header */
-}
-.underline-text {
-  text-decoration: underline;
+
 }
 /* Move header text closer to the left on mobile */
 @media (max-width: 768px) {
@@ -49,6 +47,15 @@ body {
   margin: 0;
   font-size: 17px;
   font-weight: normal;
+}
+.works-link {
+  color: white;
+  text-decoration: none; /* Remove underline */
+  margin-left: 8px; /* Add spacing */
+}
+
+.works-link:hover {
+  text-decoration: underline; /* Underline on hover */
 }
 
 /* Styling the grid container */
