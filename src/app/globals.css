@@ -48,14 +48,29 @@ body {
   font-size: 17px;
   font-weight: normal;
 }
-.works-link {
+.work-link {
   color: white;
   text-decoration: none; /* Remove underline */
   margin-left: 8px; /* Add spacing */
 }
 
-.works-link:hover {
+.work-link:hover {
   text-decoration: underline; /* Underline on hover */
+}
+.underline {
+  text-decoration: underline;
+}
+.research-link {
+  color: white;
+  text-decoration: none; /* Remove underline */
+  margin-left: 8px; /* Add spacing */
+}
+
+.research-link:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+.underline {
+  text-decoration: underline;
 }
 
 /* Styling the grid container */
