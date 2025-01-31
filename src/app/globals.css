@@ -17,27 +17,27 @@ body {
   background-color: #404040;
   color: #333;
   line-height: 1.6;
-  margin-top: 0; /* Remove any margin that might be added by the browser */
+  margin-top: 0;
 }
 
 /* Header styles */
 .header {
   width: 100%;
   color: rgb(255, 255, 255);
-  padding-left: 13px; /* Adjust padding as needed */
+  padding-left: 13px;
   padding-top: 10px;
   padding-bottom: 15px;
   text-align: left;
   font-family: 'Times New Roman', serif;
-  background-color: #404040; /* Ensure background color is consistent */
-  box-sizing: border-box; /* Avoid extra width/padding from being added to the total width */
-  margin-bottom: 0; /* Ensure no margin below the header */
-
+  background-color: #404040;
+  box-sizing: border-box;
+  margin-bottom: 0;
 }
+
 /* Move header text closer to the left on mobile */
 @media (max-width: 768px) {
   .header {
-    padding-left: 8px; /* Reduce left padding */
+    padding-left: 8px;
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -48,28 +48,22 @@ body {
   font-size: 17px;
   font-weight: normal;
 }
-.work-link {
+/* Reduce header text size on mobile */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 13px; /* Adjust the size for smaller screens */
+  }
+}
+.work-link, .research-link {
   color: white;
-  text-decoration: none; /* Remove underline */
-  margin-left: 8px; /* Add spacing */
+  text-decoration: none;
+  margin-left: 8px;
 }
 
-.work-link:hover {
+.work-link:hover, .research-link:hover {
   text-decoration: underline; /* Underline on hover */
 }
-.underline {
-  text-decoration: underline;
-}
-.research-link {
-  color: white;
-  text-decoration: none; /* Remove underline */
-  margin-left: 8px; /* Add spacing */
-}
-
-.research-link:hover {
-  text-decoration: underline; /* Underline on hover */
-}
-.underline {
+.work-link.underline, .research-link.underline {
   text-decoration: underline;
 }
 
@@ -80,8 +74,8 @@ body {
   gap: 13px; /* Space between images */
   row-gap: 10px;
   padding: 0 13px; /* Remove padding from top and bottom, only apply left and right padding */
-  margin-top: 0; /* Remove any margin on top */
-  margin-bottom: 0; /* Ensure no margin between the grid and the next element */
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* Styling for each individual grid item */
@@ -93,49 +87,45 @@ body {
   border: 1px solid rgb(209, 209, 209); /* Border around each image */
   width: 100%; /* Full width of the column */
   height: 0; /* Prevents auto height growth */
-  padding-bottom: calc(100% - 2px); /* Keeps the aspect ratio locked without causing flexbox shrink issues */
+  padding-bottom: calc(100% - 2px); /* Keeps the aspect ratio locked */
+  box-sizing: border-box; /* Ensures padding doesn't affect total width/height */
 }
-
 
 /* Image styling */
 .grid-item img {
-  position: absolute; /* Position the image inside the container */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%; /* Make the image cover the container */
   height: 100%; /* Make the image cover the container */
-  object-fit: cover; /* Ensure the image covers the square container without distortion */
+  object-fit: cover; /* Ensure the image covers the square container */
 }
 
-  /* Text Styling */
+/* Text Styling */
 .image-text {
-  font-family: 'arial';
+  font-family: 'Arial', sans-serif;
   font-size: 9px;
   color: rgb(209, 209, 209);
   max-width: 90%;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Show "..." if text is too long */
+  text-overflow: ellipsis;
   margin-top: 0;
   margin-top: -2px;
 }
-  @media (max-width: 768px) { 
-    .image-text {
-      font-size: 6px;
-      margin-top: 0; /* Remove any margin on top */
-      margin-bottom: 0;
 
-    }
-}
-/* ✅ Media Query for Mobile (iPhone 13 width: 390px) */
+/* Responsive text styling for smaller screens */
 @media (max-width: 768px) { 
-  .grid-container {
-    grid-template-columns: repeat(4, minmax(0, 1fr)); /* Show 4 images per row */
-    gap: 5px; /* Even smaller space between images on mobile */
-    row-gap: 5px;
-    padding: 7px; /* Reduce padding on smaller screens */
-    margin-top: 0; /* Remove any margin on top */
-    margin-bottom: 0; /* Ensure no margin between the grid and the next element */
+  .image-text {
+    font-size: 6px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
+  .grid-container {
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 columns on mobile */
+    gap: 5px; /* Smaller gap between images */
+    row-gap: 5px;
+    padding: 7px; /* Adjust padding */
+  }
 }

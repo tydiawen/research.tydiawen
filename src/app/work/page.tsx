@@ -11,9 +11,11 @@ interface ImageItemProps {
 
 const ImageItem: React.FC<ImageItemProps> = ({ src, alt }) => (
   <div className="grid-item">
-    <Image src={src} alt={alt} layout="fill" objectFit="cover" />
+    {/* Replace objectFit with style */}
+    <Image src={src} alt={alt} layout="fill" style={{ objectFit: 'cover' }} />
   </div>
 );
+
 const images = [
   { src: "/work/Untitled-16.jpg", alt: "Cave Image", text: "Untitled-16" },
   { src: "/work/Untitled-13.jpg", alt: "Another Image", text: "Untitled-13" },
@@ -33,9 +35,6 @@ const images = [
 const WorkPage = () => {
   return (
     <div>
-
-    {/* Image Grid */}
-
       {/* ✅ Image Grid */}
       <div className="grid-container">
         {images.map((image, index) => (

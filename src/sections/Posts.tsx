@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Image from 'next/image';
 
@@ -10,7 +9,8 @@ interface ImageItemProps {
 
 const ImageItem: React.FC<ImageItemProps> = ({ src, alt }) => (
   <div className="grid-item">
-    <Image src={src} alt={alt} layout="fill" objectFit="cover" />
+    {/* Removed objectFit prop, using style for object-fit */}
+    <Image src={src} alt={alt} layout="fill" style={{ objectFit: 'cover' }} />
   </div>
 );
 
@@ -18,12 +18,12 @@ const images = [
   { src: "/images/0-cave.jpg", alt: "", text: "0-cave.jpg" },
   { src: "/images/ones3.jpg", alt: "", text: "Arjan de Nooy 99:1" },
   { src: "/images/openart-image_aJiLSyxf_1737845001780_raw.jpg", alt: "", text: "openart-image_aJiLSyxf_1737845001780_raw.jpg" },
-  { src: "/images/bcc16.jpg", alt: "", text: "City Lights" },
-  { src: "/images/43.1.03_Eine_Kleine_Nachtmusik_THUMB_from_Tate.jpg", alt: "", text: "Love&Pop" },
-  { src: "/images/663c3a5a1892f9b1708193dadb21cacf.jpg", alt: "", text: "Dorothea Tanning" },
-  { src: "/images/79954.jpg", alt: "", text: "Laurie Simmons" },
-  { src: "/images/IMG_3105 Medium.jpeg", alt: "", text: "Corinne Day" },
-  { src: "/images/Screenshot 2024-11-10 at 9.00.05 PM Medium.jpeg", alt: "", text: "IMG_3105.jpeg" },
+  { src: "/images/bcc16.jpg", alt: "", text: "Love&Pop" },
+  { src: "/images/43.1.03_Eine_Kleine_Nachtmusik_THUMB_from_Tate.jpg", alt: "", text: "Dorothea Tanning" },
+  { src: "/images/663c3a5a1892f9b1708193dadb21cacf.jpg", alt: "", text: "Laurie Simmons" },
+  { src: "/images/79954.jpg", alt: "", text: "Corinne Day" },
+  { src: "/images/IMG_3105 Medium.jpeg", alt: "", text: "IMG_3105.jpeg" },
+  { src: "/images/Screenshot 2024-11-10 at 9.00.05 PM Medium.jpeg", alt: "", text: "Paul Sermon" },
   { src: "/images/screen-shot-2012-01-30-at-13-27-19.png", alt: "", text: "Gondry on Dead Leaves and the Dirty Ground" },
   { src: "/images/IMG_7704.jpeg", alt: "", text: "IMG_7704.jpeg" },
   { src: "/images/8541d03c-b4e7-4782-a921-aa729df3b0af-Riverbank.jpeg", alt: "", text: "Riverbank.jpeg" },

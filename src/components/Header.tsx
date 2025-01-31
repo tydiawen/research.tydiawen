@@ -1,30 +1,39 @@
-'use client'; // Marking the component as a client-side component
+'use client'; // Ensure it's a client component
 
 import React from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation'; // For detecting the current page
+import { usePathname } from 'next/navigation'; // Import Next.js pathname hook
 
 const Header = () => {
-  const pathname = usePathname();  // Get the current pathname
-
-  const isWorkPage = pathname === '/work'; // Check if we are on the 'work' page
-  const isHomePage = pathname === '/';    // Check if we are on the homepage
+  const pathname = usePathname(); // Get the current URL path
 
   return (
-    <header>
+    <header className="header">
       <h1>
-        {/* Research link, underlined if on homepage */}
-        <Link href="https://research.tydiawen.com" className={`research-link ${isHomePage ? 'underline' : ''}`}>
-          Research
-        </Link>
-        
-        {/* Separator ">" between the links */}
-        <span> &gt; </span>
+        <span>tydiawen.com</span>
+        <span style={{ marginLeft: '8px', marginRight: '5px' }}>{' /'}</span>
 
-        {/* Work link, underlined if on work page */}
-        <Link href="https://work.tydiawen.com" className={`work-link ${isWorkPage ? 'underline' : ''}`}>
-          Work
-        </Link>
+        {/* Research link with underlining logic */}
+        <span>
+          <Link 
+            href="/research"
+            className={`research-link ${pathname === '/research' ? 'underline' : ''}`}
+          >
+            research
+          </Link>
+        </span>
+
+        <span style={{ marginLeft: '8px', marginRight: '5px' }}>{' /'}</span>
+
+        {/* Work link with underlining logic */}
+        <span>
+          <Link 
+            href="/work"
+            className={`work-link ${pathname === '/work' ? 'underline' : ''}`}
+          >
+            work
+          </Link>
+        </span>
       </h1>
     </header>
   );
