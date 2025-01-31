@@ -29,7 +29,10 @@ const images = [
   { src: "/work/PICT0086.jpg", alt: "Another Image", text: "PICT0086.jpg" },
   { src: "/work/PICT0071.jpg", alt: "Another Image", text: "PICT0071.jpg" },
   { src: "/work/PICT0062.jpg", alt: "Another Image", text: "PICT0062.jpg" },
-  { src: "/work/06.12.2022.png", alt: "Another Image", text: "06.12.2022.png" },
+  { src: "/work/06.12.2022.png", alt: "Another Image", text: "06.12.2022(2)" },
+  { src: "/work/06.12.2022 2.jpg", alt: "Another Image", text: "06.12.2022" },
+  { src: "/work/Goomheo 2.png", alt: "Another Image", text: "Goomheo(2)" },
+  { src: "/work/Goomheo 1.png", alt: "Another Image", text: "Goomheo" },
 
 ];
 

@@ -15,6 +15,20 @@ const ImageItem: React.FC<ImageItemProps> = ({ src, alt }) => (
 );
 
 const images = [
+  { src: "/images/IMG_0761.jpg", alt: "", text: "Nobuyoshi Araki" },
+  { src: "/images/IMG_0759.jpg", alt: "", text: "IMG_0759.jpg" },
+  { src: "/images/IMG_0758.jpg", alt: "", text: "IMG_0758.jpg" },
+  { src: "/images/IMG_0747.jpg", alt: "", text: "Moni Haworth for Re-edition" },
+  { src: "/images/IMG_0748.jpg", alt: "", text: "Aya Kuraoka" },
+  { src: "/images/IMG_0760.jpg", alt: "", text: "IMG_0760.jpg" },
+  { src: "/images/IMG_0749.jpg", alt: "", text: "David Lynch Rabbits" },
+  { src: "/images/IMG_0752.jpg", alt: "", text: "IMG_0752.jpg" },
+  { src: "/images/IMG_0751.jpg", alt: "", text: "Where the Wild Things Are" },
+  { src: "/images/IMG_0753.jpg", alt: "", text: "@utopia753" },
+  { src: "/images/IMG_0754.jpg", alt: "", text: "0081" },
+  { src: "/images/IMG_0755.jpg", alt: "", text: "Katari Koesy" },
+  { src: "/images/IMG_0756.jpg", alt: "", text: "Cannabis Works" },
+  { src: "/images/IMG_0757.jpg", alt: "", text: "Joyce NG for VeniceW" },
   { src: "/images/0-cave.jpg", alt: "", text: "0-cave.jpg" },
   { src: "/images/ones3.jpg", alt: "", text: "Arjan de Nooy 99:1" },
   { src: "/images/openart-image_aJiLSyxf_1737845001780_raw.jpg", alt: "", text: "openart-image_aJiLSyxf_1737845001780_raw.jpg" },
@@ -32,7 +46,6 @@ const images = [
   { src: "/images/IMG_4105.jpg", alt: "", text: "IMG_4105.jpg" },
   { src: "/images/Dunes.png", alt: "", text: "Dunes" },
   { src: "/images/bluespring2.png", alt: "", text: "Blue Spring" },
-  { src: "/images/textREVEAL.jpeg", alt: "", text: "textREVEAL.jpeg" }
 ];
 
 const ImageGrid = () => {
