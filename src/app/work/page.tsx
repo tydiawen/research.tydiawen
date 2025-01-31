@@ -7,37 +7,59 @@ interface ImageItemProps {
   src: string;
   alt: string;
   text: string;
+  clickedText: string; // Text to show in the modal
   onClick: () => void;
 }
 
 const ImageItem: React.FC<ImageItemProps> = ({ src, alt, onClick }) => (
   <div className="grid-item" onClick={onClick}>
-    <Image src={src} alt={alt} layout="fill" style={{ objectFit: 'cover', cursor: 'pointer' }} />
+    <Image
+      src={src}
+      alt={alt}
+      layout="fill"
+      style={{ objectFit: 'cover', cursor: 'pointer' }}
+    />
   </div>
 );
 
 const images = [
-  { src: "/work/IMG_0738.JPG", alt: "Another Image", text: "Untitled-14.jpg" },
-  { src: "/work/IMG_0737.JPG", alt: "Another Image", text: "Untitled-13" },
-  { src: "/work/IMG_0739.JPG", alt: "Cave Image", text: "Untitled-16" },
-  { src: "/work/IMG_0736.jpg", alt: "Another Image", text: "Untitled-15" },
-  { src: "/work/Screenshot 2025-01-31 at 3.36.55 AM.jpeg", alt: "Another Image", text: "Looking-glass.com(Web-interactive)" },
-  { src: "/work/grapes.jpeg", alt: "Another Image", text: "grapes.gif" },
-  { src: "/work/open studio ver.00_01_07_01.Still004.jpg", alt: "Another Image", text: "Ex-commodity(video)" },
-  { src: "/work/Metal Etch.png", alt: "Another Image", text: "Metal Etch" },
-  { src: "/work/IMG_8441.png", alt: "Another Image", text: "IMG_8441.png" },
-  { src: "/work/PICT0086.jpg", alt: "Another Image", text: "PICT0086.jpg" },
-  { src: "/work/PICT0071.jpg", alt: "Another Image", text: "PICT0071.jpg" },
-  { src: "/work/PICT0062.jpg", alt: "Another Image", text: "PICT0062.jpg" },
-  { src: "/work/06.12.2022.png", alt: "Another Image", text: "06.12.2022(2)" },
-  { src: "/work/06.12.2022 2.jpg", alt: "Another Image", text: "06.12.2022" },
-  { src: "/work/Goomheo 2.png", alt: "Another Image", text: "Goomheo(2)" },
-  { src: "/work/Goomheo 1.png", alt: "Another Image", text: "Goomheo" },
+  {  src: "/work/IMG_0738.JPG", alt: "Another Image", text: "Untitled-14.jpg",
+    clickedText: "Kodak 200 120mm"},
+  { src: "/work/IMG_0737.JPG", alt: "Another Image", text: "Untitled-13" ,
+    clickedText: "Kodak 200 120mm"},
+  { src: "/work/IMG_0739.JPG", alt: "Cave Image", text: "Untitled-16",
+    clickedText: "Kodak 200 120mm"},
+  { src: "/work/IMG_0736.jpg", alt: "Another Image", text: "Untitled-15",
+    clickedText: "Kodak 200 120mm"},
+  { src: "/work/Screenshot 2025-01-31 at 3.36.55 AM.jpeg", alt: "Another Image", text: "Looking-glass.com(Web-interactive)",
+    clickedText: "Looking-glass.com explores the intersection of digital self-digitalisation and nostalgia, examining how the surrealist nature of memory shapes identity in the digital age. Reflecting on the evolving role of social platforms in the recent past and their profound impact on this generation’s sense of belonging and self-worth. Made in Figma."},
+  { src: "/work/grapes.jpeg", alt: "Another Image", text: "grapes.gif",
+    clickedText: ""},
+  { src: "/work/open studio ver.00_01_07_01.Still004.jpg", alt: "Another Image", text: "Ex-commodity(video)",
+    clickedText: "Ex-commodity explores the journey of an object as it transitions from a person’s valued commodity to a state of diminished significance. Projection-mapping."},
+  { src: "/work/Metal Etch.png", alt: "Another Image", text: "Metal Etch",
+    clickedText: ""},
+  { src: "/work/IMG_8441.png", alt: "Another Image", text: "IMG_8441.png" ,
+    clickedText: ""},
+  { src: "/work/PICT0086.jpg", alt: "Another Image", text: "PICT0086.jpg",
+    clickedText: "Captured on a thermal paper digital camera."},
+  { src: "/work/PICT0071.jpg", alt: "Another Image", text: "PICT0071.jpg" ,
+    clickedText: "Captured on a thermal paper digital camera."},
+  { src: "/work/PICT0062.jpg", alt: "Another Image", text: "PICT0062.jpg" ,
+    clickedText: "Captured on a thermal paper digital camera."},
+  { src: "/work/06.12.2022.png", alt: "Another Image", text: "06.12.2022.png" ,
+    clickedText: ""},
+  { src: "/work/06.12.2022 2.jpg", alt: "Another Image", text: "06.12.2022(2).jpg" ,
+    clickedText: ""},
+  { src: "/work/Goomheo 2.png", alt: "Another Image", text: "Goomheo(2)" ,
+    clickedText: "Mock campaign image for Goomheo."},
+  { src: "/work/Goomheo 1.png", alt: "Another Image", text: "Goomheo" ,
+    clickedText: "Mock campaign image for Goomheo."},
 
 ];
 
 const WorkPage = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; clickedText: string } | null>(null);
 
   return (
     <div>
@@ -49,24 +71,32 @@ const WorkPage = () => {
               src={image.src}
               alt={image.alt}
               text={image.text}
-              onClick={() => setSelectedImage(image.src)}
+              clickedText={image.clickedText}
+              onClick={() => setSelectedImage({ src: image.src, clickedText: image.clickedText })}
             />
             <p className="image-text">{image.text}</p>
           </div>
         ))}
       </div>
 
-      {/* ✅ Lightbox (Full-Size Image Modal) */}
+      {/* ✅ Lightbox (Full-Size Image Modal with Custom Text) */}
       {selectedImage && (
         <div className="lightbox" onClick={() => setSelectedImage(null)}>
-          <div className="lightbox-content">
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <Image
-              src={selectedImage}
+              src={selectedImage.src}
               alt="Full Image"
               width={800}
-              height={1200} // Taller default height for portrait images
-              style={{ objectFit: 'contain', maxWidth: '90vw', maxHeight: '90vh' }}
+              height={1200}
+              style={{
+                objectFit: 'contain',
+                maxWidth: '90vw',
+                maxHeight: '80vh',
+                display: 'block',
+              }}
             />
+            <p className="lightbox-text">{selectedImage.clickedText}</p>
+            <button className="close-button" onClick={() => setSelectedImage(null)}>✕</button>
           </div>
         </div>
       )}
@@ -88,12 +118,22 @@ const WorkPage = () => {
         .lightbox-content {
           max-width: 90vw;
           max-height: 90vh;
-          overflow: hidden;
+          text-align: center;
+          position: relative;
         }
-        .lightbox img {
-          display: block;
-          max-width: 100%;
-          max-height: 100%;
+        .lightbox-text {
+          font-size: 10px;
+          color: white;
+        }
+        .close-button {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background: none;
+          border: none;
+          font-size: 17px;
+          cursor: pointer;
+          color: white;
         }
       `}</style>
     </div>
