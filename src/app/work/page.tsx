@@ -131,7 +131,7 @@ const WorkPage = () => {
           right: 10px;
           background: none;
           border: none;
-          font-size: 17px;
+          font-size: 19px;
           cursor: pointer;
           color: white;
         }
