@@ -17,10 +17,10 @@ const ImageItem: React.FC<ImageItemProps> = ({ src, alt, onClick }) => (
 );
 
 const images = [
-  { src: "/work/Untitled-16.jpg", alt: "Cave Image", text: "Untitled-16" },
-  { src: "/work/Untitled-13.jpg", alt: "Another Image", text: "Untitled-13" },
-  { src: "/work/Untitled-15.jpg", alt: "Another Image", text: "Untitled-15" },
-  { src: "/work/Untitled-14.jpg", alt: "Another Image", text: "Untitled-14.jpg" },
+  { src: "/work/IMG_0738.JPG", alt: "Another Image", text: "Untitled-14.jpg" },
+  { src: "/work/IMG_0737.JPG", alt: "Another Image", text: "Untitled-13" },
+  { src: "/work/IMG_0739.JPG", alt: "Cave Image", text: "Untitled-16" },
+  { src: "/work/IMG_0736.jpg", alt: "Another Image", text: "Untitled-15" },
   { src: "/work/Screenshot 2025-01-31 at 3.36.55 AM.jpeg", alt: "Another Image", text: "Looking-glass.com(Web-interactive)" },
   { src: "/work/grapes.jpeg", alt: "Another Image", text: "grapes.gif" },
   { src: "/work/open studio ver.00_01_07_01.Still004.jpg", alt: "Another Image", text: "Ex-commodity(video)" },

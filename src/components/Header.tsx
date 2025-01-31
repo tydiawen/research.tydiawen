@@ -11,7 +11,7 @@ const Header = () => {
     <header className="header">
       <h1>
         <span>tydiawen.com</span>
-        <span style={{ marginLeft: '8px', marginRight: '5px' }}>{' /'}</span>
+        <span style={{ marginLeft: '4px', marginRight: '1px' }}>{' /'}</span>
 
         {/* Research link with underlining logic */}
         <span>
@@ -23,7 +23,7 @@ const Header = () => {
           </Link>
         </span>
 
-        <span style={{ marginLeft: '8px', marginRight: '5px' }}>{' /'}</span>
+        <span style={{ marginLeft: '4px', marginRight: '1px' }}>{' /'}</span>
 
         {/* Work link with underlining logic */}
         <span>
