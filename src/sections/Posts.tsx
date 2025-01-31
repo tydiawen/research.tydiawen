@@ -22,7 +22,7 @@ const images = [
   { src: "/images/43.1.03_Eine_Kleine_Nachtmusik_THUMB_from_Tate.jpg", alt: "", text: "Dorothea Tanning" },
   { src: "/images/663c3a5a1892f9b1708193dadb21cacf.jpg", alt: "", text: "Laurie Simmons" },
   { src: "/images/79954.jpg", alt: "", text: "Corinne Day" },
-  { src: "/images/IMG_3105 Medium.jpeg", alt: "", text: "IMG_3105.jpeg" },
+  { src: "/images/Holly Andres.jpeg", alt: "", text: "Holly Andres" },
   { src: "/images/Screenshot 2024-11-10 at 9.00.05 PM Medium.jpeg", alt: "", text: "Paul Sermon" },
   { src: "/images/screen-shot-2012-01-30-at-13-27-19.png", alt: "", text: "Gondry on Dead Leaves and the Dirty Ground" },
   { src: "/images/IMG_7704.jpeg", alt: "", text: "IMG_7704.jpeg" },
@@ -32,7 +32,7 @@ const images = [
   { src: "/images/IMG_4105.jpg", alt: "", text: "IMG_4105.jpg" },
   { src: "/images/Dunes.png", alt: "", text: "Dunes" },
   { src: "/images/bluespring2.png", alt: "", text: "Blue Spring" },
-  { src: "/images/IMG_8441.png", alt: "", text: "IMG_8441.png" }
+  { src: "/images/textREVEAL.jpeg", alt: "", text: "textREVEAL.jpeg" }
 ];
 
 const ImageGrid = () => {
