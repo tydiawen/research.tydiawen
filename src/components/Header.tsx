@@ -13,7 +13,7 @@ const Header = () => {
         <span>          
         {/* ✅ Make "tydiawen.com" a clickable link */}
         <Link 
-        href="/" className={`site-link ${pathname === '/' ? 'underline' : ''}`}>
+        href="/home" className={`site-link ${pathname === '/home' ? 'underline' : ''}`}>
           tydiawen.com
         </Link>
           </span>
