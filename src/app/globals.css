@@ -54,13 +54,13 @@ body {
     font-size: 13px; /* Adjust the size for smaller screens */
   }
 }
-.work-link, .research-link {
+.site-link, .work-link, .research-link {
   color: white;
   text-decoration: none;
   margin-left: 8px;
 }
 
-.work-link:hover, .research-link:hover {
+.site-link:hover, .work-link:hover, .research-link:hover {
   text-decoration: underline; /* Underline on hover */
 }
 .work-link.underline, .research-link.underline {
@@ -129,3 +129,31 @@ body {
     padding: 7px; /* Adjust padding */
   }
 }
+.home-container {
+  text-align: right;
+  font-family: 'arial', sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  padding: 21px;
+  color: white; 
+  p {
+    font-style: italic;
+  }
+}
+h1 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: bold;
+}
+@media (max-width: 768px) { 
+  .home-container {
+    font-size: 8px;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+  }
+  h1{
+    font-size: 18px;
+  }
+}
+

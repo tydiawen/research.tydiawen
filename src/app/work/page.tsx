@@ -32,7 +32,7 @@ const images = [
   { src: "/work/IMG_0736.jpg", alt: "Another Image", text: "Untitled-15",
     clickedText: "Kodak 200 120mm"},
   { src: "/work/Screenshot 2025-01-31 at 3.36.55 AM.jpeg", alt: "Another Image", text: "Looking-glass.com(Web-interactive)",
-    clickedText: "Looking-glass.com explores the intersection of digital self-digitalisation and nostalgia, examining how the surrealist nature of memory shapes identity in the digital age. Reflecting on the evolving role of social platforms in the recent past and their profound impact on this generation’s sense of belonging and self-worth. Made in Figma."},
+    clickedText: "Looking-glass.com reflects on the evolving role of social platforms in the recent past and its melancholic impact on this generation’s sense of belonging and identity. Made in Figma."},
   { src: "/work/grapes.jpeg", alt: "Another Image", text: "grapes.gif",
     clickedText: ""},
   { src: "/work/open studio ver.00_01_07_01.Still004.jpg", alt: "Another Image", text: "Ex-commodity(video)",

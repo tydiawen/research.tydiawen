@@ -10,7 +10,13 @@ const Header = () => {
   return (
     <header className="header">
       <h1>
-        <span>tydiawen.com</span>
+        <span>          
+        {/* ✅ Make "tydiawen.com" a clickable link */}
+        <Link 
+        href="/" className={`site-link ${pathname === '/' ? 'underline' : ''}`}>
+          tydiawen.com
+        </Link>
+          </span>
         <span style={{ marginLeft: '4px', marginRight: '1px' }}>{' /'}</span>
 
         {/* Research link with underlining logic */}
