@@ -15,13 +15,14 @@ const ImageItem: React.FC<ImageItemProps> = ({ src, alt }) => (
 );
 
 const images = [
+  { src: "/images/pic1.jpg", alt: "", text: "Noir, Mika Ninagawa" },
   { src: "/images/IMG_0761.jpg", alt: "", text: "Nobuyoshi Araki" },
   { src: "/images/IMG_0759.jpg", alt: "", text: "IMG_0759.jpg" },
   { src: "/images/IMG_0758.jpg", alt: "", text: "IMG_0758.jpg" },
   { src: "/images/IMG_0747.jpg", alt: "", text: "Moni Haworth for Re-edition" },
   { src: "/images/IMG_0748.jpg", alt: "", text: "Aya Kuraoka" },
   { src: "/images/IMG_0760.jpg", alt: "", text: "IMG_0760.jpg" },
-  { src: "/images/IMG_0749.jpg", alt: "", text: "David Lynch Rabbits" },
+  { src: "/images/IMG_0749.jpg", alt: "", text: "Rabbits, David Lynch " },
   { src: "/images/IMG_0752.jpg", alt: "", text: "IMG_0752.jpg" },
   { src: "/images/IMG_0751.jpg", alt: "", text: "Where the Wild Things Are" },
   { src: "/images/IMG_0753.jpg", alt: "", text: "@utopia753" },
@@ -30,7 +31,7 @@ const images = [
   { src: "/images/IMG_0756.jpg", alt: "", text: "Cannabis Works" },
   { src: "/images/IMG_0757.jpg", alt: "", text: "Joyce NG for VeniceW" },
   { src: "/images/0-cave.jpg", alt: "", text: "0-cave.jpg" },
-  { src: "/images/ones3.jpg", alt: "", text: "Arjan de Nooy 99:1" },
+  { src: "/images/ones3.jpg", alt: "", text: "99:1, Arjan de Nooy " },
   { src: "/images/openart-image_aJiLSyxf_1737845001780_raw.jpg", alt: "", text: "openart-image_aJiLSyxf_1737845001780_raw.jpg" },
   { src: "/images/bcc16.jpg", alt: "", text: "Love&Pop" },
   { src: "/images/43.1.03_Eine_Kleine_Nachtmusik_THUMB_from_Tate.jpg", alt: "", text: "Dorothea Tanning" },

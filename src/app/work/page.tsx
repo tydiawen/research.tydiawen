@@ -3,85 +3,72 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-interface ImageItemProps {
-  src: string;
-  alt: string;
-  text: string;
-  clickedText: string; // Text to show in the modal
-  onClick: () => void;
-}
+const projects = [
+    {
+images: [
+  { src: "/work/IMG_0738.JPG", alt: "Untitled-14.jpg", text: "Agnes<br /> <br />"},
+  { src: "/work/IMG_0737.JPG", alt: "Untitled-13", text: "location, lighting by Tiya", italic: true},
+  { src: "/work/IMG_0739.JPG", alt: "Untitled-16", text: ""},
+  { src: "/work/IMG_0736.jpg", alt: "Untitled-15", text: ""},
+]
+},
+{
 
-const ImageItem: React.FC<ImageItemProps> = ({ src, alt, onClick }) => (
-  <div className="grid-item" onClick={onClick}>
-    <Image
-      src={src}
-      alt={alt}
-      layout="fill"
-      style={{ objectFit: 'cover', cursor: 'pointer' }}
-    />
-  </div>
-);
-
-const images = [
-  {  src: "/work/IMG_0738.JPG", alt: "Another Image", text: "Untitled-14.jpg",
-    clickedText: "Kodak 200 120mm"},
-  { src: "/work/IMG_0737.JPG", alt: "Another Image", text: "Untitled-13" ,
-    clickedText: "Kodak 200 120mm"},
-  { src: "/work/IMG_0739.JPG", alt: "Cave Image", text: "Untitled-16",
-    clickedText: "Kodak 200 120mm"},
-  { src: "/work/IMG_0736.jpg", alt: "Another Image", text: "Untitled-15",
-    clickedText: "Kodak 200 120mm"},
-  { src: "/work/Screenshot 2025-01-31 at 3.36.55 AM.jpeg", alt: "Another Image", text: "Looking-glass.com(Web-interactive)",
-    clickedText: "Looking-glass.com reflects on the evolving role of social platforms in the recent past and its melancholic impact on this generation’s sense of belonging and identity. Made in Figma."},
-  { src: "/work/grapes.jpeg", alt: "Another Image", text: "grapes.gif",
-    clickedText: ""},
-  { src: "/work/open studio ver.00_01_07_01.Still004.jpg", alt: "Another Image", text: "Ex-commodity(video)",
-    clickedText: "Ex-commodity explores the journey of an object as it transitions from a person’s valued commodity to a state of diminished significance. Projection-mapping."},
-  { src: "/work/FINAL.png", alt: "Another Image", text: "metal lithograph(2)",
-      clickedText: ""},
-  { src: "/work/Metal Etch.png", alt: "Another Image", text: "metal lithograph",
-    clickedText: ""},
-  { src: "/work/IMG_8441.png", alt: "Another Image", text: "IMG_8441.png" ,
-    clickedText: ""},
-  { src: "/work/PICT0086.jpg", alt: "Another Image", text: "PICT0086.jpg",
-    clickedText: "Captured on a thermal paper digital camera."},
-  { src: "/work/PICT0071.jpg", alt: "Another Image", text: "PICT0071.jpg" ,
-    clickedText: "Captured on a thermal paper digital camera."},
-  { src: "/work/PICT0062.jpg", alt: "Another Image", text: "PICT0062.jpg" ,
-    clickedText: "Captured on a thermal paper digital camera."},
-  { src: "/work/06.12.2022.png", alt: "Another Image", text: "06.12.2022.png" ,
-    clickedText: ""},
-  { src: "/work/06.12.2022 2.jpg", alt: "Another Image", text: "06.12.2022(2).jpg" ,
-    clickedText: ""},
-  { src: "/work/Goomheo 2.png", alt: "Another Image", text: "Goomheo(2)" ,
-    clickedText: "Mock campaign image for Goomheo."},
-  { src: "/work/Goomheo 1.png", alt: "Another Image", text: "Goomheo" ,
-    clickedText: "Mock campaign image for Goomheo."},
-
-];
+images: [
+  { src: "/work/Screenshot 2025-02-05 at 10.16.06 PM.jpeg", alt: "Untitled-16", text: "Looking-glass.com<br /> <br /> "},
+  { src: "/work/openart-image_0pGy64LY_1737845242317_raw.jpg", alt: "Untitled-14.jpg", text: ""},
+  { src: "/work/Screenshot 2025-02-05 at 10.24.59 PM.jpeg", alt: "Untitled-13", text: "reflecting on the evolving role of social platforms in the recent past and its melancholic impact on this generation’s sense of belonging and identity.", italic: true},
+]
+},
+{
+images: [
+  { src: "/work/open studio ver.00_01_07_01.Still004.jpg", alt: "Untitled-14.jpg", text: "Ex-commodity<br /> <br /> "},
+  { src: "/work/IMG_0894 2.jpg", alt: "Untitled-16", text: "explores the journey of an object as it transitions from a person’s valued commodity to a state of diminished significance. projection-mapping.", italic: true},
+    ]
+    },
+    {
+images: [
+  { src: "/work/PICT0086.jpg", alt: "Untitled-14.jpg", text: "Bailey, Hastings"},
+  { src: "/work/PICT0077.jpg", alt: "Untitled-13", text: ""},
+  { src: "/work/PICT0062.jpg", alt: "Untitled-16", text: ""},
+        ]
+        },
+        {
+            images: [
+  { src: "/work/Screenshot 2025-02-06 at 1.47.03 AM.jpeg", alt: "Untitled-14.jpg", text: "Sense of One's Self <br /> <br />"},
+  { src: "/work/Screenshot 2025-02-06 at 1.48.07 AM.jpeg", alt: "Untitled-13", text: "found images, metal lithograph", italic: true},
+               ]
+             },
+    ];
 
 const WorkPage = () => {
-  const [selectedImage, setSelectedImage] = useState<{ src: string; clickedText: string } | null>(null);
-
-  return (
-    <div>
-      {/* ✅ Image Grid */}
-      <div className="grid-container">
-        {images.map((image, index) => (
-          <div key={index} className="grid-item-container">
-            <ImageItem
-              src={image.src}
-              alt={image.alt}
-              text={image.text}
-              clickedText={image.clickedText}
-              onClick={() => setSelectedImage({ src: image.src, clickedText: image.clickedText })}
-            />
-            <p className="image-text">{image.text}</p>
+    const [selectedImage, setSelectedImage] = useState<{ src: string } | null>(null);
+  
+    return (
+      <div className="work-container">
+        {projects.map((project, projectIndex) => (
+          <div key={projectIndex} className="project-container">
+            <div className="images-container">
+              {project.images.map((image, index) => (
+                <div key={index} className="image-wrapper" onClick={() => setSelectedImage({ src: image.src })}>
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    layout="fill"
+                    objectFit="cover"
+                    style={{ cursor: 'pointer' }}
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="description-container">
+              {project.images.map((image, index) => (
+                <p key={index} className={`description-text ${image.italic ? 'italic' : ''}`} dangerouslySetInnerHTML={{ __html: image.text }} />
+              ))}
+            </div>
           </div>
         ))}
-      </div>
-
-      {/* ✅ Lightbox (Full-Size Image Modal with Custom Text) */}
+      {/* Lightbox (Full-Size Image Modal with Custom Text) */}
       {selectedImage && (
         <div className="lightbox" onClick={() => setSelectedImage(null)}>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
@@ -97,14 +84,65 @@ const WorkPage = () => {
                 display: 'block',
               }}
             />
-            <p className="lightbox-text">{selectedImage.clickedText}</p>
             <button className="close-button" onClick={() => setSelectedImage(null)}>✕</button>
           </div>
         </div>
       )}
 
-      {/* ✅ Styles */}
+      {/* Styles */}
       <style jsx>{`
+        .work-container {
+          display: flex;
+          flex-direction: column;
+          gap: 45px;
+          padding-left: 13px;
+          padding-right: 13px;
+          width: 100%;
+        }
+
+        .project-container {
+          display: flex;
+          flex-direction: row;
+          padding-bottom: 45px;
+          border-bottom: 1px solid rgb(209, 209, 209); /* Border separator between projects */
+          position: relative;
+        }
+
+        .images-container {
+          display: flex;
+          gap: 13px;
+          flex-wrap: nowrap; /* Allow the images to wrap on smaller screens */
+          width: 100%;
+        }
+
+        .image-wrapper {
+          position: relative;
+          width: 17%; /* 4 images per row */
+          padding-bottom: 17%; /* Maintain a square aspect ratio */
+          border: 1px solid rgb(209, 209, 209); /* White border around images */
+          overflow: hidden;
+        }
+
+        .description-container {
+          position: absolute;
+          right: 0px;
+          bottom: 38px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          max-width: 25%;
+          text-align: right;
+        }
+
+        .description-text {
+          font-size: 13px;
+          color: white;
+          line-height: 1.3
+        }
+        .description-text.italic {
+          font-style: italic; /* Apply italics */
+        }
+
         .lightbox {
           position: fixed;
           top: 0;
@@ -117,25 +155,65 @@ const WorkPage = () => {
           justify-content: center;
           cursor: pointer;
         }
+
         .lightbox-content {
           max-width: 90vw;
-          max-height: 90vh;
+          max-height: 80vh;
           text-align: center;
           position: relative;
         }
+
         .lightbox-text {
-          font-size: 10px;
+          font-size: 13px;
           color: white;
+          margin-top: 15px;
         }
+
         .close-button {
           position: absolute;
           top: 10px;
           right: 10px;
           background: none;
           border: none;
-          font-size: 19px;
+          font-size: 24px;
           cursor: pointer;
           color: white;
+        }
+
+        /* Responsive styles for smaller screens (iPhone screens) */
+        @media (max-width: 768px) {
+        .work-container {
+          display: flex;
+          flex-direction: column;
+          gap: 27px;
+          padding: 7px;
+          width: 100%;
+        }
+        .project-container {
+          display: flex;
+          flex-direction: row;
+          padding-bottom: 67px;
+      }
+          .image-wrapper {
+            width: 24%; /* Keep 4 images per row, but resize for smaller screens */
+            padding-bottom: 24%; /* Maintain the square aspect ratio */
+          }
+          .images-container {
+            gap: 5px; /* Reduce the gap between images on smaller screens */
+          }
+          .description-container {
+            bottom: 3px;
+            right: 0px;
+            text-align: right; /* Center text */
+            max-width: 70%;
+         
+          }
+
+        .description-text {
+          font-size: 8px;
+          color: white;
+          line-height: 1.2
+        }
         }
       `}</style>
     </div>
