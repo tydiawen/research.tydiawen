@@ -4,12 +4,14 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 
 const projects = [
+
     {
 images: [
-  { src: "/work/IMG_0738.JPG", alt: "Untitled-14.jpg", text: "Agnes<br /> <br />"},
-  { src: "/work/IMG_0737.JPG", alt: "Untitled-13", text: "location, lighting by Tiya", italic: true},
+  { src: "/work/DSCF0170.png", alt: "Untitled-14.jpg", text: "Agnes<br /> <br />"},
+  { src: "/work/DSCF0262.png", alt: "Untitled-13", text: "AD, Styling<br /> Image: Tiya", italic: true},
+  { src: "/work/DSCF0471.png", alt: "DSCF0262.png", text: ""},
   { src: "/work/IMG_0739.JPG", alt: "Untitled-16", text: ""},
-  { src: "/work/IMG_0736.jpg", alt: "Untitled-15", text: ""},
+
 ]
 },
 {
@@ -171,7 +173,7 @@ const WorkPage = () => {
 
         .close-button {
           position: absolute;
-          top: 10px;
+          top: 0px;
           right: 10px;
           background: none;
           border: none;
